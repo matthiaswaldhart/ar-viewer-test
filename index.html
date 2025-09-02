@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AR Viewer — model‑viewer + QR</title>
+
+    <!-- model-viewer web component -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <!-- Minimal CSS -->
+    <style>
+      :root { --pad: 16px; }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: var(--pad);
+        line-height: 1.45;
+      }
+      header {
+        margin-bottom: var(--pad);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .viewer-wrap {
+        width: 100%;
+        height: 70vh;
+        max-height: 80vh;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      }
+      model-viewer { width: 100%; height: 100%; background: #f7f7f7; }
+      .panel {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: start;
+        margin-top: var(--pad);
+      }
+      .inputs {
+        display: grid;
+        gap: 8px;
+      }
+      .row { display: grid; gap: 6px; }
+      label { font-size: 14px; opacity: .8; }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 14px;
+      }
+      button {
+        padding: 10px 14px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .qr {
+        padding: 12px;
+        border: 1px dashed #ddd;
+        border-radius: 12px;
+        background: #fff;
+      }
+      .note { font-size: 13px; opacity: .75; margin-top: 6px; }
+      footer { margin-top: 24px; font-size: 13px; opacity: .8; }
+      .bad { color: #b00020; }
+      .good { color: #0b7a0b; }
+      @media (max-width: 840px) {
+        .panel { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 style="margin:0;font-size:20px;">AR Viewer</h1>
+      <div>
+        <button id="btnOpenAR">Open AR</button>
+      </div>
+    </header>
+
+    <div class="viewer-wrap">
+      <model-viewer id="mv"
+        src="assets/model.glb"
+        ios-src="assets/model.usdz"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        auto-rotate
+        exposure="1.0"
+        alt="3D model">
+      </model-viewer>
+    </div>
+
+    <div class="panel">
+      <div class="inputs">
+        <div class="row">
+          <label for="src">GLB URL (Android/Web)</label>
+          <input id="src" type="text" placeholder="/assets/model.glb" />
+        </div>
+        <div class="row">
+          <label for="iossrc">USDZ URL (iOS AR Quick Look)</label>
+          <input id="iossrc" type="text" placeholder="/assets/model.usdz" />
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button id="apply">Apply</button>
+          <button id="share">Copy sharable URL</button>
+          <span id="status" class="note"></span>
+        </div>
+        <div class="note">Tip: set your own file paths above, click <b>Apply</b>, then <b>Copy sharable URL</b>. That URL encodes your sources in query parameters so others can load the same model. The QR code on the right updates automatically.</div>
+      </div>
+
+      <div>
+        <div id="qrcode" class="qr"></div>
+        <div class="note">Scan on your phone to open this exact page + model in AR.</div>
+      </div>
+    </div>
+
+    <footer>
+      <div>Query params supported: <code>?src=&lt;GLB URL&gt;&ios-src=&lt;USDZ URL&gt;</code></div>
+    </footer>
+
+    <!-- QR code generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+      // Utility to read and write query params
+      const url = new URL(window.location.href);
+      const mv = document.getElementById('mv');
+      const srcInput = document.getElementById('src');
+      const iosInput = document.getElementById('iossrc');
+      const status = document.getElementById('status');
+      const btnApply = document.getElementById('apply');
+      const btnShare = document.getElementById('share');
+      const btnOpenAR = document.getElementById('btnOpenAR');
+
+      // Initialize from query params (if present)
+      const qpSrc = url.searchParams.get('src');
+      const qpIos = url.searchParams.get('ios-src');
+      if (qpSrc) { mv.src = qpSrc; srcInput.value = qpSrc; }
+      else { srcInput.value = mv.getAttribute('src'); }
+      if (qpIos) { mv.setAttribute('ios-src', qpIos); iosInput.value = qpIos; }
+      else { iosInput.value = mv.getAttribute('ios-src'); }
+
+      // Apply button: update model-viewer and URL (without reloading)
+      btnApply.addEventListener('click', () => {
+        const s = srcInput.value.trim();
+        const i = iosInput.value.trim();
+        if (s) { mv.src = s; url.searchParams.set('src', s); }
+        if (i) { mv.setAttribute('ios-src', i); url.searchParams.set('ios-src', i); }
+        window.history.replaceState({}, '', url.toString());
+        makeQR(url.toString());
+        flash('Applied.', true);
+      });
+
+      // Share button: copy current URL with params
+      btnShare.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(url.toString());
+          flash('Sharable URL copied to clipboard.', true);
+        } catch (e) {
+          flash('Could not copy to clipboard.', false);
+        }
+      });
+
+      // Open AR directly
+      btnOpenAR.addEventListener('click', () => {
+        // model-viewer triggers the native AR intent when we call .activateAR()
+        if (mv.canActivateAR) {
+          mv.activateAR();
+        } else {
+          flash('AR not available on this device/browser. Try on a phone.', false);
+        }
+      });
+
+      // QR code
+      let qr;
+      function makeQR(text) {
+        const el = document.getElementById('qrcode');
+        el.innerHTML = '';
+        qr = new QRCode(el, {
+          text,
+          width: 180,
+          height: 180,
+          correctLevel: QRCode.CorrectLevel.M
+        });
+      }
+      makeQR(url.toString());
+
+      function flash(msg, ok) {
+        status.textContent = msg;
+        status.className = 'note ' + (ok ? 'good' : 'bad');
+        setTimeout(() => { status.textContent = ''; status.className = 'note'; }, 2500);
+      }
+    </script>
+  </body>
+</html>
