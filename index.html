@@ -3,29 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ghostly hauntings</title>
+  <title>Ghostly Hauntings</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    :root { --pad: 16px; --bg:#cfd6e0; }
+    :root { --pad: 16px; --bg:#9BAEC4; } /* lighter muddy blue */
     * { box-sizing: border-box; }
 
-    /* Title font: Arizonia (fallbacks if not installed locally) */
-    @font-face { font-family: 'Arizonia'; src: local('Arizonia'), local('Arizonia-Regular'); }
-    /* Keep Julius for labels as fallback */
-    @font-face { font-family: 'JuliusSans'; src: local('Julius Sans One'), local('JuliusSansOne-Regular'); }
-    /* Secondary bold font for dynamic placeholders */
-    @font-face { font-family: 'BoldDisplay'; src: local('Impact'), local('Arial Black'); }
-
-    html { scroll-behavior: smooth; }
+    /* Self-hosted Arizonia font */
+    @font-face {
+      font-family: 'Arizonia';
+      src: url('assets/fonts/Arizonia-Regular.woff2') format('woff2'),
+           url('assets/fonts/Arizonia-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
 
     body {
       margin:0; padding:var(--pad);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg); /* colder bluish gray */
-      color: #000; /* all text black */
+      background: var(--bg);
+      color: #000;
     }
 
-    /* === PURE BLURRING CONTAINERS (no solid fill) === */
     .blur-blob { position: relative; border-radius: 22px; }
     .blur-blob::before {
       content: ""; position: absolute; inset: -10px; border-radius: inherit;
@@ -42,19 +42,18 @@
     .viewer-wrap { width:100%; height:70vh; max-height:80vh; margin-bottom: var(--pad); overflow: visible; }
     model-viewer { width:100%; height:100%; background: transparent; border-radius: 16px; }
 
-    .fab { position: relative; display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #000; padding: 10px 14px; border-radius: 999px; box-shadow: none; font-size: 14px; cursor: pointer; font-family: system-ui, sans-serif; border: 1px solid #000; }
+    .fab { position: relative; display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #000; padding: 10px 14px; border-radius: 999px; box-shadow: none; font-size: 14px; cursor: pointer; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; border: 1px solid #000; }
 
     .info { margin:14px 0; padding:14px; display:grid; gap:6px; }
     .info-row { display:flex; gap:10px; flex-wrap:wrap; }
-    .pill { border-radius:999px; padding:6px 10px; font-size:15px; background: transparent; color: #000; border: 1px solid #000; }
-    .label { margin-right:6px; font-family:'JuliusSans', sans-serif; font-size:14px; color: #000; }
-    .pill span[id] { font-family:'BoldDisplay', sans-serif; font-weight:700; font-size:16px; color: #000; }
+    .pill { border-radius:999px; padding:6px 10px; font-size:20px; background: transparent; color: #000; border: 1px solid #000; font-family: 'Arizonia', cursive; }
+    .label { margin-right:6px; font-size:18px; color: #000; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .pill span[id] { font-family:'Arizonia', cursive; font-weight:400; font-size:20px; color: #000; }
 
     .qr-panel { display:flex; align-items:center; gap:12px; justify-content:flex-start; margin-top: var(--pad); padding: 14px 16px; }
     .qr { padding:8px; border-radius:12px; background: #fff; border:1px solid #000; }
-    .note { font-size: 18px; font-family:'JuliusSans', sans-serif; color: #000; }
+    .note { font-size: 18px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #000; }
 
-    /* Mobile scroll hint (arrow down) */
     .scroll-hint { position: fixed; left: 50%; transform: translateX(-50%); bottom: 14px; z-index: 5;
       display: none; align-items: center; justify-content: center; width: 44px; height: 44px;
       background: rgba(255,255,255,0.6); border: 1px solid #000; border-radius: 999px;
@@ -66,7 +65,7 @@
 </head>
 <body>
   <div class="header-container blur-blob">
-    <h1 id="title">Ghostly hauntings</h1>
+    <h1 id="title">Ghostly Hauntings</h1>
     <div>
       <button id="btnOpenAR" class="fab">Open in AR</button>
     </div>
@@ -84,23 +83,20 @@
     </model-viewer>
   </div>
 
-  <!-- Info box -->
   <section class="info blur-blob" aria-label="Look information">
     <div class="info-row">
-      <span class="pill"><span class="label">Collection:</span> <span id="iCollection">Ghostly hauntings</span></span>
+      <span class="pill"><span class="label">Collection:</span> <span id="iCollection">Ghostly Hauntings</span></span>
       <span class="pill"><span class="label">Group:</span> <span id="iGroup">G?</span></span>
       <span class="pill"><span class="label">Look:</span> <span id="iLook">??</span></span>
       <span class="pill"><span class="label">Designer:</span> <span id="iDesigner">Designer Name</span></span>
     </div>
   </section>
 
-  <!-- QR -->
   <section class="qr-panel blur-blob">
     <div class="qr"></div>
-    <div class="note">Scan on your phone to open this model in AR.</div>
+    <div class="note">Long press the QR code to save an image so you can view the AR look later and share it with your friends :)</div>
   </section>
 
-  <!-- Mobile scroll hint -->
   <button id="scrollHint" class="scroll-hint" aria-label="Scroll down for info" title="Scroll down">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="6 9 12 15 18 9"></polyline>
