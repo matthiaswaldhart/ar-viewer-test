@@ -1,225 +1,127 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Collection Title</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Collection Title</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    :root { --pad: 16px; --bg:#cfd6e0; }
+    * { box-sizing: border-box; }
 
-    <!-- model-viewer web component -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    /* Title font: Julius Sans One */
+    @font-face { font-family: 'JuliusSans'; src: local('Julius Sans One'), local('JuliusSansOne-Regular'), sans-serif; }
+    /* Secondary bold font for dynamic placeholders */
+    @font-face { font-family: 'BoldDisplay'; src: local('Impact'), local('Arial Black'), sans-serif; }
 
-    <style>
-      :root { --pad: 16px; }
-      body {
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: var(--pad);
-        line-height: 1.45;
-        color: #111;
-        background: #fff;
-      }
-      header {
-        margin-bottom: var(--pad);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        align-items: center;
-        justify-content: space-between;
-      }
-      h1 { margin:0; font-size:20px; font-weight:600; }
-      .viewer-wrap {
-        width: 100%;
-        height: 70vh;
-        max-height: 80vh;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 2px 12px rgba(0,0,0,.08);
-        border: 1px solid #eee;
-      }
-      model-viewer { width: 100%; height: 100%; background: #f7f7f7; }
+    body {
+      margin:0; padding:var(--pad);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg); /* colder bluish gray */
+      color: #000; /* all text black */
+    }
 
-      /* Info box (new) */
-      .info {
-        margin: 14px 0;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 14px;
-        display: grid;
-        gap: 6px;
-        background: #fafafa;
-      }
-      .info-row { display:flex; gap: 10px; flex-wrap: wrap; }
-      .pill {
-        border: 1px solid #e6e6e6;
-        border-radius: 999px;
-        padding: 6px 10px;
-        font-size: 13px;
-        background: #fff;
-      }
-      .label { opacity:.65; margin-right:6px; }
+    /* === PURE BLURRING CONTAINERS (no solid fill) === */
+    .blur-blob { position: relative; border-radius: 22px; }
+    .blur-blob::before {
+      content: ""; position: absolute; inset: -10px; border-radius: inherit;
+      background: radial-gradient(120% 160% at 50% 0%, rgba(255,255,255,0.7), rgba(230,238,252,0.45) 40%, rgba(210,222,240,0.3) 70%, rgba(200,210,225,0.0) 100%);
+      filter: blur(12px);
+      -webkit-filter: blur(12px);
+      z-index: 0; pointer-events: none;
+    }
+    .blur-blob > * { position: relative; z-index: 1; }
 
-      .panel {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 16px;
-        align-items: start;
-        margin-top: var(--pad);
-      }
-      .inputs { display: grid; gap: 8px; }
-      .row { display: grid; gap: 6px; }
-      label { font-size: 14px; opacity: .8; }
-      input[type="text"] {
-        width: 100%;
-        padding: 10px 12px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        font-size: 14px;
-      }
-      button {
-        padding: 10px 14px;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        background: #fff;
-        cursor: pointer;
-        font-size: 14px;
-      }
-      .qr {
-        padding: 12px;
-        border: 1px dashed #ddd;
-        border-radius: 12px;
-        background: #fff;
-      }
-      .note { font-size: 13px; opacity: .75; margin-top: 6px; }
-      .bad { color: #b00020; }
-      .good { color: #0b7a0b; }
-      @media (max-width: 840px) {
-        .panel { grid-template-columns: 1fr; }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Collection Title — Placeholder</h1>
-      <div>
-        <button id="btnOpenAR">Open AR</button>
-      </div>
-    </header>
+    .header-container { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom: var(--pad); padding: 18px 24px; }
+    h1 { margin:0; font-size:36px; font-weight:400; font-family: 'JuliusSans', sans-serif; letter-spacing:1px; text-transform: uppercase; color: #000; }
 
-    <div class="viewer-wrap">
-      <model-viewer id="mv"
-        src="assets/model.glb"
-        ios-src="assets/model.usdz"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-        auto-rotate
-        exposure="1.0"
-        alt="3D model">
-      </model-viewer>
+    .viewer-wrap { width:100%; height:70vh; max-height:80vh; margin-bottom: var(--pad); overflow: visible; }
+    model-viewer { width:100%; height:100%; background: transparent; border-radius: 16px; }
+
+    .fab { position: relative; display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #000; padding: 10px 14px; border-radius: 999px; box-shadow: none; font-size: 14px; cursor: pointer; font-family: system-ui, sans-serif; border: 1px solid #000; }
+
+    .info { margin:14px 0; padding:14px; display:grid; gap:6px; }
+    .info-row { display:flex; gap:10px; flex-wrap:wrap; }
+    .pill { border-radius:999px; padding:6px 10px; font-size:15px; background: transparent; color: #000; border: 1px solid #000; }
+    .label { margin-right:6px; font-family:'JuliusSans', sans-serif; font-size:14px; color: #000; }
+    .pill span[id] { font-family:'BoldDisplay', sans-serif; font-weight:700; font-size:16px; color: #000; }
+
+    .qr-panel { display:flex; align-items:center; gap:12px; justify-content:flex-start; margin-top: var(--pad); padding: 14px 16px; }
+    .qr { padding:8px; border-radius:12px; background: #fff; border:1px solid #000; }
+    .note { font-size: 18px; font-family:'JuliusSans', sans-serif; color: #000; }
+  </style>
+</head>
+<body>
+  <div class="header-container blur-blob">
+    <h1 id="title">Collection Title — Placeholder</h1>
+    <div>
+      <button id="btnOpenAR" class="fab">Open in AR</button>
     </div>
+  </div>
 
-    <!-- NEW: metadata box above inputs -->
-    <section class="info" aria-label="Look information">
-      <div class="info-row">
-        <span class="pill"><span class="label">Collection:</span> Ghostly Hauntings — AW25</span>
-        <span class="pill"><span class="label">Group:</span> G2</span>
-        <span class="pill"><span class="label">Look:</span> 03</span>
-        <span class="pill"><span class="label">Designer:</span> Jane Nguyen</span>
-      </div>
-    </section>
+  <div class="viewer-wrap blur-blob">
+    <model-viewer id="mv"
+      src="assets/model.glb"
+      ios-src="assets/model.usdz"
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      camera-controls
+      auto-rotate
+      alt="3D model">
+    </model-viewer>
+  </div>
 
-    <div class="panel">
-      <div class="inputs">
-        <div class="row">
-          <label for="src">GLB URL (Android/Web)</label>
-          <input id="src" type="text" placeholder="/assets/model.glb" />
-        </div>
-        <div class="row">
-          <label for="iossrc">USDZ URL (iOS AR Quick Look)</label>
-          <input id="iossrc" type="text" placeholder="/assets/model.usdz" />
-        </div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <button id="apply">Apply</button>
-          <button id="share">Copy sharable URL</button>
-          <span id="status" class="note"></span>
-        </div>
-      </div>
-
-      <div>
-        <div id="qrcode" class="qr"></div>
-        <div class="note">Scan on your phone to open this exact page + model in AR.</div>
-      </div>
+  <!-- Info box (placeholders) -->
+  <section class="info blur-blob" aria-label="Look information">
+    <div class="info-row">
+      <span class="pill"><span class="label">Collection:</span> <span id="iCollection">Collection Title — Placeholder</span></span>
+      <span class="pill"><span class="label">Group:</span> <span id="iGroup">G?</span></span>
+      <span class="pill"><span class="label">Look:</span> <span id="iLook">??</span></span>
+      <span class="pill"><span class="label">Designer:</span> <span id="iDesigner">Designer Name</span></span>
     </div>
+  </section>
 
-    <!-- Removed the old 'Tip' section -->
+  <!-- QR -->
+  <section class="qr-panel blur-blob">
+    <div class="qr"></div>
+    <div class="note">Scan on your phone to open this model in AR.</div>
+  </section>
 
-    <!-- QR code generator -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    const mv = document.getElementById('mv');
+    const btnOpenAR = document.getElementById('btnOpenAR');
+    const url = new URL(window.location.href);
 
-    <script>
-      const url = new URL(window.location.href);
-      const mv = document.getElementById('mv');
-      const srcInput = document.getElementById('src');
-      const iosInput = document.getElementById('iossrc');
-      const status = document.getElementById('status');
-      const btnApply = document.getElementById('apply');
-      const btnShare = document.getElementById('share');
-      const btnOpenAR = document.getElementById('btnOpenAR');
+    // Optional: allow deep links to override assets + labels
+    const qpSrc = url.searchParams.get('src');
+    const qpIos = url.searchParams.get('ios-src');
+    const qpCollection = url.searchParams.get('collection');
+    const qpGroup = url.searchParams.get('group');
+    const qpLook = url.searchParams.get('look');
+    const qpDesigner = url.searchParams.get('designer');
 
-      // init from query params if present
-      const qpSrc = url.searchParams.get('src');
-      const qpIos = url.searchParams.get('ios-src');
-      if (qpSrc) { mv.src = qpSrc; srcInput.value = qpSrc; }
-      else { srcInput.value = mv.getAttribute('src'); }
-      if (qpIos) { mv.setAttribute('ios-src', qpIos); iosInput.value = qpIos; }
-      else { iosInput.value = mv.getAttribute('ios-src'); }
+    if (qpSrc) mv.src = qpSrc;
+    if (qpIos) mv.setAttribute('ios-src', qpIos);
+    if (qpCollection) { document.getElementById('title').textContent = qpCollection; document.getElementById('iCollection').textContent = qpCollection; }
+    if (qpGroup) document.getElementById('iGroup').textContent = qpGroup;
+    if (qpLook) document.getElementById('iLook').textContent = qpLook;
+    if (qpDesigner) document.getElementById('iDesigner').textContent = qpDesigner;
 
-      // apply new paths + update URL + QR
-      btnApply.addEventListener('click', () => {
-        const s = srcInput.value.trim();
-        const i = iosInput.value.trim();
-        if (s) { mv.src = s; url.searchParams.set('src', s); }
-        if (i) { mv.setAttribute('ios-src', i); url.searchParams.set('ios-src', i); }
-        window.history.replaceState({}, '', url.toString());
-        makeQR(url.toString());
-        flash('Applied.', true);
-      });
+    // QR for this exact URL
+    new QRCode(document.querySelector('.qr'), {
+      text: url.toString(), width: 160, height: 160, correctLevel: QRCode.CorrectLevel.M
+    });
 
-      // share/copy URL
-      btnShare.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(url.toString());
-          flash('Sharable URL copied to clipboard.', true);
-        } catch (e) {
-          flash('Could not copy to clipboard.', false);
-        }
-      });
-
-      // open AR directly
-      btnOpenAR.addEventListener('click', () => {
-        if (mv.canActivateAR) {
-          mv.activateAR();
-        } else {
-          // iOS direct fallback
-          const i = mv.getAttribute('ios-src');
-          if (i) window.location.href = i;
-          else flash('AR not available. Try on a phone with AR support.', false);
-        }
-      });
-
-      // QR
-      function makeQR(text) {
-        const el = document.getElementById('qrcode');
-        el.innerHTML = '';
-        new QRCode(el, { text, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M });
+    // Open AR logic + iOS fallback
+    btnOpenAR.addEventListener('click', () => {
+      if (mv.canActivateAR) {
+        mv.activateAR();
+      } else {
+        const i = mv.getAttribute('ios-src');
+        if (i) window.location.href = i;
       }
-      makeQR(url.toString());
-
-      function flash(msg, ok) {
-        status.textContent = msg;
-        status.className = 'note ' + (ok ? 'good' : 'bad');
-        setTimeout(() => { status.textContent = ''; status.className = 'note'; }, 2500);
-      }
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
