@@ -6,10 +6,9 @@
   <title>Ghostly Hauntings</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    :root { --pad: 16px; --bg:#9BAEC4; } /* lighter muddy blue */
+    :root { --pad: 16px; --bg:#7D838A; } /* dark washed-out grey */
     * { box-sizing: border-box; }
 
-    /* Self-hosted Arizonia font */
     @font-face {
       font-family: 'Arizonia';
       src: url('assets/fonts/Arizonia-Regular.woff2') format('woff2'),
@@ -79,6 +78,11 @@
       ar-modes="webxr scene-viewer quick-look"
       camera-controls
       auto-rotate
+      exposure="0.95"
+      shadow-intensity="1"
+      shadow-softness="0.2"
+      environment-image="assets/env/studio.hdr"
+      tone-mapping="aces"
       alt="3D model">
     </model-viewer>
   </div>
