@@ -53,7 +53,7 @@
       exposure="0.95"
       shadow-intensity="1"
       shadow-softness="0.2"
-      environment-image="assets/env/neutral_env.png"
+      environment-image="assets/env/studio_small_03_2k.hdr"
       tone-mapping="aces"
       alt="3D model">
     </model-viewer>
@@ -99,15 +99,6 @@
     if (qpGroup) document.getElementById('iGroup').textContent = qpGroup;
     if (qpLook) document.getElementById('iLook').textContent = qpLook;
     if (qpDesigner) document.getElementById('iDesigner').textContent = qpDesigner;
-
-    // Robust fallback: if model files aren't present, swap to a public sample so page always works
-    async function head(u){ try{ const r = await fetch(u,{method:'HEAD'}); return r.ok; }catch(_){ return false; } }
-    (async () => {
-      const srcOk = await head(mv.getAttribute('src'));
-      if (!srcOk) mv.src = 'https://modelviewer.dev/shared-assets/models/Astronaut.glb';
-      const iosOk = await head(mv.getAttribute('ios-src'));
-      if (!iosOk) mv.setAttribute('ios-src','https://modelviewer.dev/shared-assets/models/Astronaut.usdz');
-    })();
 
     // QR for this exact URL
     new QRCode(document.querySelector('.qr'), {
