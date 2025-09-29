@@ -6,7 +6,7 @@
   <title>Ghostly Hauntings</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    :root { --pad: 16px; --bg:#7D838A; } /* dark washed-out grey */
+    :root { --pad: 16px; --bg:#7D838A; }
     * { box-sizing: border-box; }
 
     @font-face {
@@ -18,56 +18,45 @@
       font-display: swap;
     }
 
-    body {
-      margin:0; padding:var(--pad);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: #000;
-    }
-
+    body { margin:0; padding:var(--pad); font-family: system-ui, sans-serif; background: var(--bg); color:#000; }
     .blur-blob { position: relative; border-radius: 22px; }
     .blur-blob::before {
       content: ""; position: absolute; inset: -10px; border-radius: inherit;
       background: radial-gradient(120% 160% at 50% 0%, rgba(255,255,255,0.7), rgba(230,238,252,0.45) 40%, rgba(210,222,240,0.3) 70%, rgba(200,210,225,0.0) 100%);
-      filter: blur(10px);
-      -webkit-filter: blur(10px);
-      z-index: 0; pointer-events: none;
+      filter: blur(8px); -webkit-filter: blur(8px);
+      z-index:0; pointer-events:none;
     }
-    .blur-blob > * { position: relative; z-index: 1; }
+    .blur-blob>* { position:relative; z-index:1; }
 
-    .header-container { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom: var(--pad); padding: 18px 24px; }
-    h1 { margin:0; font-size:44px; font-weight:400; font-family: 'Arizonia', cursive; letter-spacing:0.5px; color: #000; }
+    .header-container { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:var(--pad); padding:18px 24px; }
+    h1 { margin:0; font-size:44px; font-weight:400; font-family:'Arizonia', cursive; color:#000; }
 
-    .viewer-wrap { width:100%; height:70vh; max-height:80vh; margin-bottom: var(--pad); overflow: visible; }
-    model-viewer { width:100%; height:100%; background: transparent; border-radius: 16px; }
+    .viewer-wrap { width:100%; height:70vh; max-height:80vh; margin-bottom:var(--pad); overflow:visible; }
+    model-viewer { width:100%; height:100%; background:transparent; border-radius:16px; }
 
-    .fab { position: relative; display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #000; padding: 10px 14px; border-radius: 999px; box-shadow: none; font-size: 14px; cursor: pointer; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; border: 1px solid #000; }
+    .fab { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#000; padding:10px 14px; border-radius:999px; font-size:14px; border:1px solid #000; cursor:pointer; }
 
     .info { margin:14px 0; padding:14px; display:grid; gap:6px; }
     .info-row { display:flex; gap:10px; flex-wrap:wrap; }
-    .pill { border-radius:999px; padding:6px 10px; font-size:20px; background: transparent; color: #000; border: 1px solid #000; font-family: 'Arizonia', cursive; }
-    .label { margin-right:6px; font-size:18px; color: #000; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    .pill span[id] { font-family:'Arizonia', cursive; font-weight:400; font-size:20px; color: #000; }
+    .pill { border-radius:999px; padding:6px 10px; font-size:20px; border:1px solid #000; font-family:'Arizonia', cursive; }
+    .label { margin-right:6px; font-size:18px; font-family:system-ui,sans-serif; }
+    .pill span[id] { font-family:'Arizonia', cursive; font-weight:400; font-size:20px; }
 
-    .qr-panel { display:flex; align-items:center; gap:12px; justify-content:flex-start; margin-top: var(--pad); padding: 14px 16px; }
-    .qr { padding:8px; border-radius:12px; background: #fff; border:1px solid #000; }
-    .note { font-size: 18px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #000; }
+    .qr-panel { display:flex; align-items:center; gap:12px; margin-top:var(--pad); padding:14px 16px; }
+    .qr { padding:8px; border-radius:12px; background:#fff; border:1px solid #000; }
+    .note { font-size:18px; font-family:system-ui,sans-serif; }
 
-    .scroll-hint { position: fixed; left: 50%; transform: translateX(-50%); bottom: 14px; z-index: 5;
-      display: none; align-items: center; justify-content: center; width: 44px; height: 44px;
-      background: rgba(255,255,255,0.6); border: 1px solid #000; border-radius: 999px;
-      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-    }
-    .scroll-hint svg { width: 22px; height: 22px; }
-    @media (max-width: 840px) { .scroll-hint { display: flex; } }
+    .scroll-hint { position:fixed; left:50%; transform:translateX(-50%); bottom:14px; z-index:5; display:none; align-items:center; justify-content:center; width:44px; height:44px; background:rgba(255,255,255,0.6); border:1px solid #000; border-radius:999px; backdrop-filter:blur(6px); }
+    .scroll-hint svg { width:22px; height:22px; }
+    @media(max-width:840px){.scroll-hint{display:flex;}}
+
+    .status { position:fixed; right:12px; bottom:12px; z-index:10; padding:10px 12px; border:1px solid #000; background:#fff; color:#000; border-radius:12px; font-size:12px; max-width:60ch; }
   </style>
 </head>
 <body>
   <div class="header-container blur-blob">
     <h1 id="title">Ghostly Hauntings</h1>
-    <div>
-      <button id="btnOpenAR" class="fab">Open in AR</button>
-    </div>
+    <button id="btnOpenAR" class="fab">Open in AR</button>
   </div>
 
   <div class="viewer-wrap blur-blob">
@@ -87,7 +76,7 @@
     </model-viewer>
   </div>
 
-  <section class="info blur-blob" aria-label="Look information">
+  <section class="info blur-blob">
     <div class="info-row">
       <span class="pill"><span class="label">Collection:</span> <span id="iCollection">Ghostly Hauntings</span></span>
       <span class="pill"><span class="label">Group:</span> <span id="iGroup">G?</span></span>
@@ -101,7 +90,9 @@
     <div class="note">Long press the QR code to save an image so you can view the AR look later and share it with your friends :)</div>
   </section>
 
-  <button id="scrollHint" class="scroll-hint" aria-label="Scroll down for info" title="Scroll down">
+  <div id="status" class="status">Loading…</div>
+
+  <button id="scrollHint" class="scroll-hint">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="6 9 12 15 18 9"></polyline>
     </svg>
@@ -109,51 +100,21 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script>
-    const mv = document.getElementById('mv');
-    const btnOpenAR = document.getElementById('btnOpenAR');
-    const url = new URL(window.location.href);
-    const scrollHint = document.getElementById('scrollHint');
+    const mv=document.getElementById('mv');
+    const btnOpenAR=document.getElementById('btnOpenAR');
+    const scrollHint=document.getElementById('scrollHint');
+    const statusEl=document.getElementById('status');
 
-    const qpSrc = url.searchParams.get('src');
-    const qpIos = url.searchParams.get('ios-src');
-    const qpCollection = url.searchParams.get('collection');
-    const qpGroup = url.searchParams.get('group');
-    const qpLook = url.searchParams.get('look');
-    const qpDesigner = url.searchParams.get('designer');
+    function setStatus(msg){statusEl.textContent=msg;}
 
-    if (qpSrc) mv.src = qpSrc;
-    if (qpIos) mv.setAttribute('ios-src', qpIos);
-    if (qpCollection) { document.getElementById('title').textContent = qpCollection; document.getElementById('iCollection').textContent = qpCollection; }
-    if (qpGroup) document.getElementById('iGroup').textContent = qpGroup;
-    if (qpLook) document.getElementById('iLook').textContent = qpLook;
-    if (qpDesigner) document.getElementById('iDesigner').textContent = qpDesigner;
+    async function head(url){try{const r=await fetch(url,{method:'HEAD'});return {url,ok:r.ok,status:r.status,type:r.headers.get('content-type')};}catch(err){return {url,ok:false,status:'network',type:null,err:String(err)};}}
 
-    new QRCode(document.querySelector('.qr'), {
-      text: url.toString(), width: 160, height: 160, correctLevel: QRCode.CorrectLevel.M
-    });
+    async function runChecks(){const src=mv.getAttribute('src');const ios=mv.getAttribute('ios-src');const env=mv.getAttribute('environment-image');const parts=await Promise.all([src?head(src):null,ios?head(ios):null,env?head(env):null].filter(Boolean));const lines=parts.map(p=>`${p.url} → ${p.ok?'OK '+p.status:'FAIL '+p.status}${p.type?(' ('+p.type+')'):''}`);setStatus(`Probing files…\n${lines.join('\n')}`);}
 
-    btnOpenAR.addEventListener('click', () => {
-      if (mv.canActivateAR) {
-        mv.activateAR();
-      } else {
-        const i = mv.getAttribute('ios-src');
-        if (i) window.location.href = i;
-      }
-    });
+    mv.addEventListener('load',()=>setStatus('Model loaded ✓'));
+    mv.addEventListener('error',e=>{const msg=(e.detail&&e.detail.message)?e.detail.message:'Unknown error';setStatus('Model failed to load: '+msg+'\n• Check assets/model.glb exists and is under 100MB (no Git LFS).\n• If local, serve via http:// not file://');});
 
-    function updateScrollHint() {
-      const isMobile = window.matchMedia('(max-width: 840px)').matches;
-      if (!isMobile) { scrollHint.style.display = 'none'; return; }
-      scrollHint.style.display = window.scrollY <= 2 ? 'flex' : 'none';
-    }
-    window.addEventListener('scroll', updateScrollHint, { passive: true });
-    window.addEventListener('resize', updateScrollHint);
-    updateScrollHint();
-
-    scrollHint.addEventListener('click', () => {
-      const info = document.querySelector('.info');
-      if (info) info.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+    runChecks();
   </script>
 </body>
 </html>
