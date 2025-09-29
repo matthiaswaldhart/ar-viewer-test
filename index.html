@@ -33,6 +33,10 @@
     h1 {
       margin:0; font-size:44px; font-weight:400;
       font-family:'Syne Mono', monospace; color:#000;
+      white-space: nowrap; /* prevent wrapping */
+    }
+    @media (max-width: 600px) {
+      h1 { font-size:28px; }
     }
 
     .button-group { display:flex; gap:12px; }
@@ -48,10 +52,12 @@
 
     .info { margin:14px 0; padding:14px; display:grid; gap:6px; }
     .info-row { display:flex; gap:10px; flex-wrap:wrap; }
+
     .pill {
       border-radius:999px; padding:6px 10px; font-size:20px;
       background:transparent; color:#000; border:1px solid #000;
       font-family:'Syne Mono', monospace;
+      white-space: nowrap; /* keep each pill in a single line */
     }
     .label {
       margin-right:6px; font-size:18px; color:#000;
@@ -59,6 +65,13 @@
     }
     .pill span[id] {
       font-family:'Syne Mono', monospace; font-weight:400; font-size:20px; color:#000;
+    }
+
+    @media (max-width: 600px) {
+      .pill { font-size:16px; padding:4px 8px; }
+      .label { font-size:14px; }
+      .pill span[id] { font-size:16px; }
+      .info-row { gap:8px; }
     }
 
     .qr-panel { display:flex; align-items:center; gap:12px; margin-top:var(--pad); padding:14px 16px; }
