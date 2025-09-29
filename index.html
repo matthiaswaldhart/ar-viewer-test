@@ -2,64 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AR Looks Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AR Looks — Responsive Viewer</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <!-- Font: Syne Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
   <style>
-    :root { --pad: 16px; --bg:#7D838A; }
+    :root {
+      --pad: 16px;
+      --bg: #7D838A;        /* dark washed-out grey */
+      --maxw: 960px;        /* desktop content width */
+      --radius: 22px;
+    }
     * { box-sizing: border-box; }
-    body { margin:0; padding:var(--pad); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color:#000; }
-    .blur-blob { position: relative; border-radius: 22px; }
-    .blur-blob::before { content: ""; position: absolute; inset: -10px; border-radius: inherit;
-      background: radial-gradient(120% 160% at 50% 0%, rgba(255,255,255,0.7), rgba(230,238,252,0.45) 40%, rgba(210,222,240,0.3) 70%, rgba(200,210,225,0.0) 100%);
-      filter: blur(8px); -webkit-filter: blur(8px); z-index: 0; pointer-events: none; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #000;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Center column that adapts */
+    .container {
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: var(--pad);
+    }
+
+    /* Blur “pill” containers (no solid fill) */
+    .blur-blob { position: relative; border-radius: var(--radius); }
+    .blur-blob::before {
+      content: ""; position: absolute; inset: -10px; border-radius: inherit;
+      background: radial-gradient(120% 160% at 50% 0%,
+                  rgba(255,255,255,0.7),
+                  rgba(230,238,252,0.45) 40%,
+                  rgba(210,222,240,0.30) 70%,
+                  rgba(200,210,225,0.00) 100%);
+      filter: blur(8px); -webkit-filter: blur(8px);
+      z-index: 0; pointer-events: none;
+    }
     .blur-blob > * { position: relative; z-index: 1; }
-    .header-container { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:var(--pad); padding:18px 24px; }
-    h1 { margin:0; font-size:44px; font-weight:400; font-family:'Syne Mono', monospace; white-space:nowrap; }
-    @media (max-width:600px){ h1 { font-size:28px; } }
-    .button-group { display:flex; gap:12px; }
-    .fab { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#000; padding:10px 14px; border-radius:999px; font-size:14px; border:1px solid #000; cursor:pointer; }
-    .viewer-wrap { width:100%; height:70vh; max-height:80vh; margin-bottom:var(--pad); overflow:visible; }
-    model-viewer { width:100%; height:100%; background:transparent; border-radius:16px; }
-    .statement { margin:14px 0; padding:16px 18px; }
-    .statement p { margin:0; line-height:1.4; font-size:16px; }
-    @media (max-width:600px){ .statement p { font-size:15px; } }
-    .info { margin:14px 0; padding:14px; display:grid; gap:10px; }
+
+    /* Header */
+    .header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:18px 24px; margin-bottom: var(--pad); }
+    h1 {
+      margin: 0;
+      font-family: 'Syne Mono', monospace;
+      font-weight: 400;
+      font-size: 44px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .btns { display:flex; gap:12px; }
+    .fab {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius: 999px;
+      background: transparent; color:#000; border:1px solid #000;
+      font-size:14px; cursor:pointer;
+    }
+
+    /* Viewer */
+    .viewer { width: 100%; height: 68vh; max-height: 78vh; margin-bottom: var(--pad); }
+    model-viewer { width:100%; height:100%; background: transparent; border-radius: 16px; }
+
+    /* Statement */
+    .statement { padding:16px 18px; margin:14px 0; }
+    .statement p { margin:0; font-size:16px; line-height:1.45; }
+
+    /* Tags line */
+    .info { margin:14px 0; padding:14px; }
     .info-row { display:flex; gap:10px; flex-wrap:wrap; }
-    .pill { border-radius:999px; padding:6px 10px; font-size:20px; background:transparent; color:#000; border:1px solid #000; font-family:'Syne Mono', monospace; white-space:nowrap; }
-    .label { margin-right:6px; font-size:18px; color:#000; }
+    .pill {
+      border-radius:999px; padding:6px 10px;
+      background: transparent; color:#000; border:1px solid #000;
+      font-family:'Syne Mono', monospace; font-size:20px; white-space: nowrap;
+    }
+    .label { margin-right:6px; font-size:18px; color:#000; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
     .value { font-family:'Syne Mono', monospace; font-size:20px; }
-    @media (max-width:600px){ .pill{font-size:16px; padding:4px 8px;} .label{font-size:14px;} .value{font-size:16px;} .info-row{gap:8px;} }
-    .qr-panel { display:flex; align-items:center; gap:12px; margin-top:var(--pad); padding:14px 16px; flex-wrap:wrap; }
+
+    /* QR row */
+    .qr-panel { display:flex; align-items:center; gap:12px; padding:14px 16px; margin-top: var(--pad); flex-wrap:wrap; }
     .qr { padding:6px; border-radius:12px; background:#fff; border:1px solid #000; }
     .qr canvas { width:120px !important; height:120px !important; }
     .note-pill { border-radius:999px; padding:8px 12px; border:1px solid #000; background:transparent; font-size:16px; }
+
+    /* Tablet adjustments */
+    @media (max-width: 900px) {
+      :root { --maxw: 760px; }
+      h1 { font-size: 36px; }
+      .viewer { height: 64vh; }
+      .pill { font-size:18px; }
+      .value { font-size:18px; }
+    }
+
+    /* Phone adjustments */
+    @media (max-width: 600px) {
+      :root { --maxw: 100%; }
+      .container { padding: 12px; }
+      h1 { font-size: 26px; white-space: normal; }
+      .viewer { height: 58vh; }
+      .statement { padding: 12px 14px; }
+      .statement p { font-size: 15px; }
+      .info { padding: 10px; }
+      .info-row { gap: 8px; }
+      .pill { font-size: 16px; padding: 4px 8px; }
+      .label { font-size: 14px; }
+      .value { font-size: 16px; }
+      .qr-panel { flex-direction: column; align-items: flex-start; }
+      .qr canvas { width: 108px !important; height: 108px !important; }
+      .note-pill { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
-  <div class="header-container blur-blob">
-    <h1 id="title">Loading…</h1>
-    <div class="button-group">
-      <button id="btnOpenAR" class="fab">Open in AR</button>
-      <button id="btnInfo" class="fab">Info</button>
+  <main class="container">
+    <!-- Header -->
+    <div class="header blur-blob">
+      <h1 id="title">Loading…</h1>
+      <div class="btns">
+        <button id="btnOpenAR" class="fab">Open in AR</button>
+        <button id="btnInfo" class="fab">Info</button>
+      </div>
     </div>
-  </div>
-  <div class="viewer-wrap blur-blob">
-    <model-viewer id="mv" src="" ios-src="" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate exposure="0.8" shadow-intensity="1" shadow-softness="0.2" environment-image="assets/env/studio_small_03_2k.hdr" tone-mapping="aces" alt="3D model"></model-viewer>
-  </div>
-  <section class="statement blur-blob"><p id="collectionStatement"></p></section>
-  <section class="info blur-blob" id="infoSection"><div class="info-row" id="pillRow"></div></section>
-  <section class="qr-panel blur-blob"><div class="qr" id="qr"></div><div class="note-pill">Long press this QR code to save it as an image.</div></section>
+
+    <!-- 3D Viewer -->
+    <div class="viewer blur-blob">
+      <model-viewer id="mv"
+        src=""
+        ios-src=""
+        ar ar-modes="webxr scene-viewer quick-look"
+        camera-controls auto-rotate
+        exposure="0.8"
+        shadow-intensity="1"
+        shadow-softness="0.2"
+        environment-image="assets/env/studio_small_03_2k.hdr"
+        tone-mapping="aces"
+        alt="3D model">
+      </model-viewer>
+    </div>
+
+    <!-- Statement (PER-LOOK ONLY) -->
+    <section class="statement blur-blob" aria-label="Collection statement">
+      <p id="collectionStatement"></p>
+    </section>
+
+    <!-- Tags -->
+    <section class="info blur-blob" id="infoSection" aria-label="Look information">
+      <div class="info-row" id="pillRow"></div>
+    </section>
+
+    <!-- QR -->
+    <section class="qr-panel blur-blob">
+      <div class="qr" id="qr"></div>
+      <div class="note-pill">Long press this QR code to save it as an image.</div>
+    </section>
+  </main>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script>
     const url = new URL(window.location.href);
     const lookId = url.searchParams.get('look');
+
     const titleEl = document.getElementById('title');
     const pillRow = document.getElementById('pillRow');
-    const QR_WRAP = document.getElementById('qr');
     const statementEl = document.getElementById('collectionStatement');
     const mv = document.getElementById('mv');
     const btnOpenAR = document.getElementById('btnOpenAR');
@@ -69,21 +181,25 @@
     function addPill(label, value){ if(!value) return; const span=document.createElement('span'); span.className='pill'; span.innerHTML=`<span class="label">${label}:</span> <span class="value">${value}</span>`; pillRow.appendChild(span); }
 
     fetch('looks.json').then(r=>r.json()).then(data=>{
-      let entry = null;
-      if (lookId) entry = (data.looks||[]).find(l=>l.id===lookId);
-      if (!entry) entry = (data.looks||[])[0]; // fallback to first
+      // Pick the look
+      const entry = (data.looks || []).find(l => l.id === lookId) || (data.looks || [])[0];
+      if (!entry) throw new Error('No looks found in looks.json');
 
-      titleEl.textContent = (entry && entry.collectionTitle) || data.collectionTitle || 'Collection';
-      statementEl.textContent = data.statement || '';
+      // Title & PER-LOOK statement (no global fallback)
+      titleEl.textContent = entry.collectionTitle || 'Collection';
+      statementEl.textContent = entry.statement || '';
 
+      // Pills
       const designersSorted = (entry.designers||[]).slice().sort((a,b)=>a.localeCompare(b));
-      addPill('Collection', entry.collectionTitle || data.collectionTitle || '');
+      addPill('Collection', entry.collectionTitle || '');
       addPill('Look', entry.lookName || '');
       addPill('Designers', designersSorted.join(', '));
 
+      // Bind models
       mv.src = entry.src || '';
       if (entry.iosSrc) mv.setAttribute('ios-src', entry.iosSrc);
 
+      // Robust fallbacks to keep page usable if files missing
       (async()=>{
         if (!(await headOk(mv.src))) mv.src='https://modelviewer.dev/shared-assets/models/Astronaut.glb';
         const ios = mv.getAttribute('ios-src');
@@ -92,16 +208,23 @@
         if (env && !(await headOk(env))) mv.removeAttribute('environment-image');
       })();
 
+      // QR for this look
       const canonical = new URL(window.location.href);
-      if (entry.id) canonical.searchParams.set('look', entry.id);
-      new QRCode(QR_WRAP, { text: canonical.toString(), width: 120, height: 120, correctLevel: QRCode.CorrectLevel.M });
+      canonical.searchParams.set('look', entry.id);
+      new QRCode(document.getElementById('qr'), { text: canonical.toString(), width: 120, height: 120, correctLevel: QRCode.CorrectLevel.M });
     }).catch(err=>{
       titleEl.textContent = 'Load error';
       statementEl.textContent = err.message;
     });
 
-    btnOpenAR.addEventListener('click', ()=>{ if (mv.canActivateAR) mv.activateAR(); else { const i = mv.getAttribute('ios-src'); if (i) window.location.href=i; } });
-    btnInfo.addEventListener('click', ()=>{ document.getElementById('infoSection').scrollIntoView({behavior:'smooth', block:'start'}); });
+    // Actions
+    btnOpenAR.addEventListener('click', ()=>{
+      if (mv.canActivateAR) mv.activateAR();
+      else { const i = mv.getAttribute('ios-src'); if (i) window.location.href = i; }
+    });
+    btnInfo.addEventListener('click', ()=>{
+      document.getElementById('infoSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   </script>
 </body>
 </html>
