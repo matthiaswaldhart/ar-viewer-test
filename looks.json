@@ -6,23 +6,6 @@
       "id": "G3-01",
       "collectionTitle": "The Footprint",
       "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
-      "lookName": "Grandpa",
-      "designers": [
-        "Bui Cao Ky Dang",
-        "Bui Lan Anh",
-        "Do Nguyen Mai Huong",
-        "Huynh Minh Thy",
-        "Nguyen Bao Ngoc",
-        "Nguyen Hai Ha"
-      ],
-      "group": "G1",
-      "src": "assets/looks/G3-01/Grandpa.glb",
-      "iosSrc": "assets/looks/G3-01/Grandpa.usdz"
-    },
-    {
-      "id": "G3-02",
-      "collectionTitle": "The Footprint",
-      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
       "lookName": "Grandma",
       "designers": [
         "Bui Cao Ky Dang",
@@ -33,8 +16,25 @@
         "Nguyen Hai Ha"
       ],
       "group": "G1",
-      "src": "assets/looks/G3-02/Grandma.glb",
-      "iosSrc": "assets/looks/G3-02/Grandma.usdz"
+      "src": "assets/looks/G3-01/Grandma.glb",
+      "iosSrc": "assets/looks/G3-01/Grandma.usdz"
+    },
+    {
+      "id": "G3-02",
+      "collectionTitle": "The Footprint",
+      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
+      "lookName": "Grandpa",
+      "designers": [
+        "Bui Cao Ky Dang",
+        "Bui Lan Anh",
+        "Do Nguyen Mai Huong",
+        "Huynh Minh Thy",
+        "Nguyen Bao Ngoc",
+        "Nguyen Hai Ha"
+      ],
+      "group": "G1",
+      "src": "assets/looks/G3-02/Grandpa.glb",
+      "iosSrc": "assets/looks/G3-02/Grandpa.usdz"
     },
     {
       "id": "G3-03",
