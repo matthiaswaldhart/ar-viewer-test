@@ -1,9 +1,9 @@
 {
-  "collectionTitle": "The Footprint",
+  "collectionTitle": "AR Collections",
   "statement": "",
   "looks": [
     {
-      "id": "G3-01",
+      "id": "G1-01",
       "collectionTitle": "The Footprint",
       "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
       "lookName": "Grandma",
@@ -16,11 +16,11 @@
         "Nguyen Hai Ha"
       ],
       "group": "G1",
-      "src": "assets/looks/G3-01/Grandma.glb",
-      "iosSrc": "assets/looks/G3-01/Grandma.usdz"
+      "src": "assets/looks/G1-01/Grandma.glb",
+      "iosSrc": "assets/looks/G1-01/Grandma.usdz"
     },
     {
-      "id": "G3-02",
+      "id": "G1-02",
       "collectionTitle": "The Footprint",
       "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
       "lookName": "Grandpa",
@@ -33,11 +33,11 @@
         "Nguyen Hai Ha"
       ],
       "group": "G1",
-      "src": "assets/looks/G3-02/Grandpa.glb",
-      "iosSrc": "assets/looks/G3-02/Grandpa.usdz"
+      "src": "assets/looks/G1-02/Grandpa.glb",
+      "iosSrc": "assets/looks/G1-02/Grandpa.usdz"
     },
     {
-      "id": "G3-03",
+      "id": "G1-03",
       "collectionTitle": "The Footprint",
       "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
       "lookName": "Mother",
@@ -50,11 +50,11 @@
         "Nguyen Hai Ha"
       ],
       "group": "G1",
-      "src": "assets/looks/G3-03/Mother.glb",
-      "iosSrc": "assets/looks/G3-03/Mother.usdz"
+      "src": "assets/looks/G1-03/Mother.glb",
+      "iosSrc": "assets/looks/G1-03/Mother.usdz"
     },
     {
-      "id": "G3-04",
+      "id": "G1-04",
       "collectionTitle": "The Footprint",
       "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
       "lookName": "Auntie",
@@ -67,11 +67,11 @@
         "Nguyen Hai Ha"
       ],
       "group": "G1",
-      "src": "assets/looks/G3-04/Auntie.glb",
-      "iosSrc": "assets/looks/G3-04/Auntie.usdz"
+      "src": "assets/looks/G1-04/Auntie.glb",
+      "iosSrc": "assets/looks/G1-04/Auntie.usdz"
     },
     {
-      "id": "G3-05",
+      "id": "G1-05",
       "collectionTitle": "The Footprint",
       "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
       "lookName": "Older-Sister",
@@ -84,11 +84,11 @@
         "Nguyen Hai Ha"
       ],
       "group": "G1",
-      "src": "assets/looks/G3-05/Older-Sister.glb",
-      "iosSrc": "assets/looks/G3-05/Older-Sister.usdz"
+      "src": "assets/looks/G1-05/Older-Sister.glb",
+      "iosSrc": "assets/looks/G1-05/Older-Sister.usdz"
     },
     {
-      "id": "G3-06",
+      "id": "G1-06",
       "collectionTitle": "The Footprint",
       "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
       "lookName": "Younger-Sister",
@@ -101,8 +101,8 @@
         "Nguyen Hai Ha"
       ],
       "group": "G1",
-      "src": "assets/looks/G3-06/Younger-Sister.glb",
-      "iosSrc": "assets/looks/G3-06/Younger-Sister.usdz"
+      "src": "assets/looks/G1-06/Younger-Sister.glb",
+      "iosSrc": "assets/looks/G1-06/Younger-Sister.usdz"
     },
     {
       "id": "G2-01",
@@ -207,7 +207,7 @@
       "iosSrc": "assets/looks/G2-06/Look2-V3.usdz"
     },
     {
-      "id": "G1-01",
+      "id": "G3-01",
       "collectionTitle": "Dream within a Dream",
       "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
       "lookName": "Look-1",
@@ -220,11 +220,11 @@
         "Nguyen Ngoc Bao Khanh"
       ],
       "group": "G3",
-      "src": "assets/looks/G1-01/Look-1.glb",
-      "iosSrc": "assets/looks/G1-01/Look-1.usdz"
+      "src": "assets/looks/G3-01/Look-1.glb",
+      "iosSrc": "assets/looks/G3-01/Look-1.usdz"
     },
     {
-      "id": "G1-02",
+      "id": "G3-02",
       "collectionTitle": "Dream within a Dream",
       "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
       "lookName": "Look-2",
@@ -237,11 +237,11 @@
         "Nguyen Ngoc Bao Khanh"
       ],
       "group": "G3",
-      "src": "assets/looks/G1-02/Look-2.glb",
-      "iosSrc": "assets/looks/G1-02/Look-2.usdz"
+      "src": "assets/looks/G3-02/Look-2.glb",
+      "iosSrc": "assets/looks/G3-02/Look-2.usdz"
     },
     {
-      "id": "G1-03",
+      "id": "G3-03",
       "collectionTitle": "Dream within a Dream",
       "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
       "lookName": "Look-3",
@@ -254,11 +254,11 @@
         "Nguyen Ngoc Bao Khanh"
       ],
       "group": "G3",
-      "src": "assets/looks/G1-03/Look-3.glb",
-      "iosSrc": "assets/looks/G1-03/Look-3.usdz"
+      "src": "assets/looks/G3-03/Look-3.glb",
+      "iosSrc": "assets/looks/G3-03/Look-3.usdz"
     },
     {
-      "id": "G1-04",
+      "id": "G3-04",
       "collectionTitle": "Dream within a Dream",
       "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
       "lookName": "Look-4",
@@ -271,11 +271,11 @@
         "Nguyen Ngoc Bao Khanh"
       ],
       "group": "G3",
-      "src": "assets/looks/G1-04/Look-4.glb",
-      "iosSrc": "assets/looks/G1-04/Look-4.usdz"
+      "src": "assets/looks/G3-04/Look-4.glb",
+      "iosSrc": "assets/looks/G3-04/Look-4.usdz"
     },
     {
-      "id": "G1-05",
+      "id": "G3-05",
       "collectionTitle": "Dream within a Dream",
       "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
       "lookName": "Look-5",
@@ -288,11 +288,11 @@
         "Nguyen Ngoc Bao Khanh"
       ],
       "group": "G3",
-      "src": "assets/looks/G1-05/Look-5.glb",
-      "iosSrc": "assets/looks/G1-05/Look-5.usdz"
+      "src": "assets/looks/G3-05/Look-5.glb",
+      "iosSrc": "assets/looks/G3-05/Look-5.usdz"
     },
     {
-      "id": "G1-06",
+      "id": "G3-06",
       "collectionTitle": "Dream within a Dream",
       "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
       "lookName": "Look-6",
@@ -305,8 +305,8 @@
         "Nguyen Ngoc Bao Khanh"
       ],
       "group": "G3",
-      "src": "assets/looks/G1-06/Look-6.glb",
-      "iosSrc": "assets/looks/G1-06/Look-6.usdz"
+      "src": "assets/looks/G3-06/Look-6.glb",
+      "iosSrc": "assets/looks/G3-06/Look-6.usdz"
     }
   ]
 }
