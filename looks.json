@@ -1,312 +1,168 @@
 {
-  "collectionTitle": "AR Collections",
-  "statement": "",
   "looks": [
     {
       "id": "G1-01",
-      "collectionTitle": "The Footprint",
-      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
-      "lookName": "Grandma",
-      "designers": [
-        "Bui Cao Ky Dang",
-        "Bui Lan Anh",
-        "Do Nguyen Mai Huong",
-        "Huynh Minh Thy",
-        "Nguyen Bao Ngoc",
-        "Nguyen Hai Ha"
-      ],
       "group": "G1",
+      "collectionTitle": "The Footprint",
+      "lookName": "Grandma",
       "src": "assets/looks/G1-01/Grandma.glb",
-      "iosSrc": "assets/looks/G1-01/Grandma.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G1-01/Grandma.usdz?cb=1697835600",
+      "designers": ["Bui Cao Ky Dang","Bui Lan Anh","Do Nguyen Mai Huong","Huynh Minh Thy","Nguyen Bao Ngoc","Nguyen Hai Ha"]
     },
     {
       "id": "G1-02",
-      "collectionTitle": "The Footprint",
-      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
-      "lookName": "Grandpa",
-      "designers": [
-        "Bui Cao Ky Dang",
-        "Bui Lan Anh",
-        "Do Nguyen Mai Huong",
-        "Huynh Minh Thy",
-        "Nguyen Bao Ngoc",
-        "Nguyen Hai Ha"
-      ],
       "group": "G1",
+      "collectionTitle": "The Footprint",
+      "lookName": "Grandpa",
       "src": "assets/looks/G1-02/Grandpa.glb",
-      "iosSrc": "assets/looks/G1-02/Grandpa.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G1-02/Grandpa.usdz?cb=1697835600",
+      "designers": ["Bui Cao Ky Dang","Bui Lan Anh","Do Nguyen Mai Huong","Huynh Minh Thy","Nguyen Bao Ngoc","Nguyen Hai Ha"]
     },
     {
       "id": "G1-03",
-      "collectionTitle": "The Footprint",
-      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
-      "lookName": "Mother",
-      "designers": [
-        "Bui Cao Ky Dang",
-        "Bui Lan Anh",
-        "Do Nguyen Mai Huong",
-        "Huynh Minh Thy",
-        "Nguyen Bao Ngoc",
-        "Nguyen Hai Ha"
-      ],
       "group": "G1",
+      "collectionTitle": "The Footprint",
+      "lookName": "Mother",
       "src": "assets/looks/G1-03/Mother.glb",
-      "iosSrc": "assets/looks/G1-03/Mother.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G1-03/Mother.usdz?cb=1697835600",
+      "designers": ["Bui Cao Ky Dang","Bui Lan Anh","Do Nguyen Mai Huong","Huynh Minh Thy","Nguyen Bao Ngoc","Nguyen Hai Ha"]
     },
     {
       "id": "G1-04",
-      "collectionTitle": "The Footprint",
-      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
-      "lookName": "Auntie",
-      "designers": [
-        "Bui Cao Ky Dang",
-        "Bui Lan Anh",
-        "Do Nguyen Mai Huong",
-        "Huynh Minh Thy",
-        "Nguyen Bao Ngoc",
-        "Nguyen Hai Ha"
-      ],
       "group": "G1",
+      "collectionTitle": "The Footprint",
+      "lookName": "Auntie",
       "src": "assets/looks/G1-04/Auntie.glb",
-      "iosSrc": "assets/looks/G1-04/Auntie.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G1-04/Auntie.usdz?cb=1697835600",
+      "designers": ["Bui Cao Ky Dang","Bui Lan Anh","Do Nguyen Mai Huong","Huynh Minh Thy","Nguyen Bao Ngoc","Nguyen Hai Ha"]
     },
     {
       "id": "G1-05",
-      "collectionTitle": "The Footprint",
-      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
-      "lookName": "Older-Sister",
-      "designers": [
-        "Bui Cao Ky Dang",
-        "Bui Lan Anh",
-        "Do Nguyen Mai Huong",
-        "Huynh Minh Thy",
-        "Nguyen Bao Ngoc",
-        "Nguyen Hai Ha"
-      ],
       "group": "G1",
+      "collectionTitle": "The Footprint",
+      "lookName": "Older Sister",
       "src": "assets/looks/G1-05/Older-Sister.glb",
-      "iosSrc": "assets/looks/G1-05/Older-Sister.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G1-05/Older-Sister.usdz?cb=1697835600",
+      "designers": ["Bui Cao Ky Dang","Bui Lan Anh","Do Nguyen Mai Huong","Huynh Minh Thy","Nguyen Bao Ngoc","Nguyen Hai Ha"]
     },
     {
       "id": "G1-06",
-      "collectionTitle": "The Footprint",
-      "statement": "This collection is born from the perspective of young people searching for\ntheir roots, tracing the lives of those who came before them. It lives in the\nspace between past and present, where garments become portraits and\nthreads become timelines.\nEach outfit embodies a family member, spanning from the oldest\ngeneration to the youngest, transforming clothing into the primary\nmarker of identity as faces fade like old photographs. The threads carry\nmemory across decades, weaving the old into the young and the young\ninto the old, until it is no longer people wearing clothes, but clothes\nwearing people - bearing their histories, carrying their truths, and\nbecoming them entirely.",
-      "lookName": "Younger-Sister",
-      "designers": [
-        "Bui Cao Ky Dang",
-        "Bui Lan Anh",
-        "Do Nguyen Mai Huong",
-        "Huynh Minh Thy",
-        "Nguyen Bao Ngoc",
-        "Nguyen Hai Ha"
-      ],
       "group": "G1",
+      "collectionTitle": "The Footprint",
+      "lookName": "Younger Sister",
       "src": "assets/looks/G1-06/Younger-Sister.glb",
-      "iosSrc": "assets/looks/G1-06/Younger-Sister.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G1-06/Younger-Sister.usdz?cb=1697835600",
+      "designers": ["Bui Cao Ky Dang","Bui Lan Anh","Do Nguyen Mai Huong","Huynh Minh Thy","Nguyen Bao Ngoc","Nguyen Hai Ha"]
     },
+
     {
       "id": "G2-01",
-      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
-      "statement": "Threads of Water: The Puppet’s Three Acts\n\nIn the cultural memory of Vietnam, the water puppet has always been more than a form of entertainment—it is a vessel of storytelling, labor, and time. This collection transforms the fragile life cycle of the puppet into fashion: from its first commanding act, through the strain of repair, to its final silence on the shelf.\n\nThe collection emphasizes structure that gradually dissolves. Strong, symmetrical silhouettes open the narrative, with pleated folds echoing the roofs of water puppet theaters and the puppet’s original rigidity. As the sequence unfolds, garments begin to lose balance—collars shift, belts disappear, pleats shorten, and asymmetry interrupts the once-powerful form. By the final stage, fabrics soften, motifs fade, and details erode, leaving ghostly traces of what once was.\n\nEarth-driven colors dominate the palette—lacquer red, moss green, and golden ochre—layered with muted greys and charcoals that symbolize strain and decay. Textile prints reflect this cycle: ornamental rhythms in Act I, fractured and distressed surfaces in Act II, and ghostly eroded motifs in Act III.\n\nFashion here becomes a stage, a medium of memory and disappearance. Each look embodies the fragile connection between puppeteer and puppet, between vitality and silence. It seeks to honor Vietnam’s artistic traditions while reimagining them as garments that speak to transformation, impermanence, and cultural resilience.",
-      "lookName": "Look1-V1",
-      "designers": [
-        "Do Ha Phuong",
-        "Kim SangYoo",
-        "Lieu Thuy Dan",
-        "Nguyen Le Chi Bao",
-        "Nguyen Nhat Dong",
-        "Nguyen Tuong Vy"
-      ],
       "group": "G2",
+      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
+      "lookName": "Look1-V1",
       "src": "assets/looks/G2-01/Look1-V1.glb",
-      "iosSrc": "assets/looks/G2-01/Look1-V1.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G2-01/Look1-V1.usdz?cb=1697835600",
+      "designers": ["Do Ha Phuong","Kim SangYoo","Lieu Thuy Dan","Nguyen Le Chi Bao","Nguyen Nhat Dong","Nguyen Tuong Vy"]
     },
     {
       "id": "G2-02",
-      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
-      "statement": "Threads of Water: The Puppet’s Three Acts\n\nIn the cultural memory of Vietnam, the water puppet has always been more than a form of entertainment—it is a vessel of storytelling, labor, and time. This collection transforms the fragile life cycle of the puppet into fashion: from its first commanding act, through the strain of repair, to its final silence on the shelf.\n\nThe collection emphasizes structure that gradually dissolves. Strong, symmetrical silhouettes open the narrative, with pleated folds echoing the roofs of water puppet theaters and the puppet’s original rigidity. As the sequence unfolds, garments begin to lose balance—collars shift, belts disappear, pleats shorten, and asymmetry interrupts the once-powerful form. By the final stage, fabrics soften, motifs fade, and details erode, leaving ghostly traces of what once was.\n\nEarth-driven colors dominate the palette—lacquer red, moss green, and golden ochre—layered with muted greys and charcoals that symbolize strain and decay. Textile prints reflect this cycle: ornamental rhythms in Act I, fractured and distressed surfaces in Act II, and ghostly eroded motifs in Act III.\n\nFashion here becomes a stage, a medium of memory and disappearance. Each look embodies the fragile connection between puppeteer and puppet, between vitality and silence. It seeks to honor Vietnam’s artistic traditions while reimagining them as garments that speak to transformation, impermanence, and cultural resilience.",
-      "lookName": "Look2-V1",
-      "designers": [
-        "Do Ha Phuong",
-        "Kim SangYoo",
-        "Lieu Thuy Dan",
-        "Nguyen Le Chi Bao",
-        "Nguyen Nhat Dong",
-        "Nguyen Tuong Vy"
-      ],
       "group": "G2",
+      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
+      "lookName": "Look2-V1",
       "src": "assets/looks/G2-02/Look2-V1.glb",
-      "iosSrc": "assets/looks/G2-02/Look2-V1.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G2-02/Look2-V1.usdz?cb=1697835600",
+      "designers": ["Do Ha Phuong","Kim SangYoo","Lieu Thuy Dan","Nguyen Le Chi Bao","Nguyen Nhat Dong","Nguyen Tuong Vy"]
     },
     {
       "id": "G2-03",
-      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
-      "statement": "Threads of Water: The Puppet’s Three Acts\n\nIn the cultural memory of Vietnam, the water puppet has always been more than a form of entertainment—it is a vessel of storytelling, labor, and time. This collection transforms the fragile life cycle of the puppet into fashion: from its first commanding act, through the strain of repair, to its final silence on the shelf.\n\nThe collection emphasizes structure that gradually dissolves. Strong, symmetrical silhouettes open the narrative, with pleated folds echoing the roofs of water puppet theaters and the puppet’s original rigidity. As the sequence unfolds, garments begin to lose balance—collars shift, belts disappear, pleats shorten, and asymmetry interrupts the once-powerful form. By the final stage, fabrics soften, motifs fade, and details erode, leaving ghostly traces of what once was.\n\nEarth-driven colors dominate the palette—lacquer red, moss green, and golden ochre—layered with muted greys and charcoals that symbolize strain and decay. Textile prints reflect this cycle: ornamental rhythms in Act I, fractured and distressed surfaces in Act II, and ghostly eroded motifs in Act III.\n\nFashion here becomes a stage, a medium of memory and disappearance. Each look embodies the fragile connection between puppeteer and puppet, between vitality and silence. It seeks to honor Vietnam’s artistic traditions while reimagining them as garments that speak to transformation, impermanence, and cultural resilience.",
-      "lookName": "Look1-V2",
-      "designers": [
-        "Do Ha Phuong",
-        "Kim SangYoo",
-        "Lieu Thuy Dan",
-        "Nguyen Le Chi Bao",
-        "Nguyen Nhat Dong",
-        "Nguyen Tuong Vy"
-      ],
       "group": "G2",
+      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
+      "lookName": "Look1-V2",
       "src": "assets/looks/G2-03/Look1-V2.glb",
-      "iosSrc": "assets/looks/G2-03/Look1-V2.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G2-03/Look1-V2.usdz?cb=1697835600",
+      "designers": ["Do Ha Phuong","Kim SangYoo","Lieu Thuy Dan","Nguyen Le Chi Bao","Nguyen Nhat Dong","Nguyen Tuong Vy"]
     },
     {
       "id": "G2-04",
-      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
-      "statement": "Threads of Water: The Puppet’s Three Acts\n\nIn the cultural memory of Vietnam, the water puppet has always been more than a form of entertainment—it is a vessel of storytelling, labor, and time. This collection transforms the fragile life cycle of the puppet into fashion: from its first commanding act, through the strain of repair, to its final silence on the shelf.\n\nThe collection emphasizes structure that gradually dissolves. Strong, symmetrical silhouettes open the narrative, with pleated folds echoing the roofs of water puppet theaters and the puppet’s original rigidity. As the sequence unfolds, garments begin to lose balance—collars shift, belts disappear, pleats shorten, and asymmetry interrupts the once-powerful form. By the final stage, fabrics soften, motifs fade, and details erode, leaving ghostly traces of what once was.\n\nEarth-driven colors dominate the palette—lacquer red, moss green, and golden ochre—layered with muted greys and charcoals that symbolize strain and decay. Textile prints reflect this cycle: ornamental rhythms in Act I, fractured and distressed surfaces in Act II, and ghostly eroded motifs in Act III.\n\nFashion here becomes a stage, a medium of memory and disappearance. Each look embodies the fragile connection between puppeteer and puppet, between vitality and silence. It seeks to honor Vietnam’s artistic traditions while reimagining them as garments that speak to transformation, impermanence, and cultural resilience.",
-      "lookName": "Look2-V2",
-      "designers": [
-        "Do Ha Phuong",
-        "Kim SangYoo",
-        "Lieu Thuy Dan",
-        "Nguyen Le Chi Bao",
-        "Nguyen Nhat Dong",
-        "Nguyen Tuong Vy"
-      ],
       "group": "G2",
+      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
+      "lookName": "Look2-V2",
       "src": "assets/looks/G2-04/Look2-V2.glb",
-      "iosSrc": "assets/looks/G2-04/Look2-V2.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G2-04/Look2-V2.usdz?cb=1697835600",
+      "designers": ["Do Ha Phuong","Kim SangYoo","Lieu Thuy Dan","Nguyen Le Chi Bao","Nguyen Nhat Dong","Nguyen Tuong Vy"]
     },
     {
       "id": "G2-05",
-      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
-      "statement": "Threads of Water: The Puppet’s Three Acts\n\nIn the cultural memory of Vietnam, the water puppet has always been more than a form of entertainment—it is a vessel of storytelling, labor, and time. This collection transforms the fragile life cycle of the puppet into fashion: from its first commanding act, through the strain of repair, to its final silence on the shelf.\n\nThe collection emphasizes structure that gradually dissolves. Strong, symmetrical silhouettes open the narrative, with pleated folds echoing the roofs of water puppet theaters and the puppet’s original rigidity. As the sequence unfolds, garments begin to lose balance—collars shift, belts disappear, pleats shorten, and asymmetry interrupts the once-powerful form. By the final stage, fabrics soften, motifs fade, and details erode, leaving ghostly traces of what once was.\n\nEarth-driven colors dominate the palette—lacquer red, moss green, and golden ochre—layered with muted greys and charcoals that symbolize strain and decay. Textile prints reflect this cycle: ornamental rhythms in Act I, fractured and distressed surfaces in Act II, and ghostly eroded motifs in Act III.\n\nFashion here becomes a stage, a medium of memory and disappearance. Each look embodies the fragile connection between puppeteer and puppet, between vitality and silence. It seeks to honor Vietnam’s artistic traditions while reimagining them as garments that speak to transformation, impermanence, and cultural resilience.",
-      "lookName": "Look1-V3",
-      "designers": [
-        "Do Ha Phuong",
-        "Kim SangYoo",
-        "Lieu Thuy Dan",
-        "Nguyen Le Chi Bao",
-        "Nguyen Nhat Dong",
-        "Nguyen Tuong Vy"
-      ],
       "group": "G2",
+      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
+      "lookName": "Look1-V3",
       "src": "assets/looks/G2-05/Look1-V3.glb",
-      "iosSrc": "assets/looks/G2-05/Look1-V3.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G2-05/Look1-V3.usdz?cb=1697835600",
+      "designers": ["Do Ha Phuong","Kim SangYoo","Lieu Thuy Dan","Nguyen Le Chi Bao","Nguyen Nhat Dong","Nguyen Tuong Vy"]
     },
     {
       "id": "G2-06",
-      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
-      "statement": "Threads of Water: The Puppet’s Three Acts\n\nIn the cultural memory of Vietnam, the water puppet has always been more than a form of entertainment—it is a vessel of storytelling, labor, and time. This collection transforms the fragile life cycle of the puppet into fashion: from its first commanding act, through the strain of repair, to its final silence on the shelf.\n\nThe collection emphasizes structure that gradually dissolves. Strong, symmetrical silhouettes open the narrative, with pleated folds echoing the roofs of water puppet theaters and the puppet’s original rigidity. As the sequence unfolds, garments begin to lose balance—collars shift, belts disappear, pleats shorten, and asymmetry interrupts the once-powerful form. By the final stage, fabrics soften, motifs fade, and details erode, leaving ghostly traces of what once was.\n\nEarth-driven colors dominate the palette—lacquer red, moss green, and golden ochre—layered with muted greys and charcoals that symbolize strain and decay. Textile prints reflect this cycle: ornamental rhythms in Act I, fractured and distressed surfaces in Act II, and ghostly eroded motifs in Act III.\n\nFashion here becomes a stage, a medium of memory and disappearance. Each look embodies the fragile connection between puppeteer and puppet, between vitality and silence. It seeks to honor Vietnam’s artistic traditions while reimagining them as garments that speak to transformation, impermanence, and cultural resilience.",
-      "lookName": "Look2-V3",
-      "designers": [
-        "Do Ha Phuong",
-        "Kim SangYoo",
-        "Lieu Thuy Dan",
-        "Nguyen Le Chi Bao",
-        "Nguyen Nhat Dong",
-        "Nguyen Tuong Vy"
-      ],
       "group": "G2",
+      "collectionTitle": "Threads of Water: The Puppet’s Three Acts",
+      "lookName": "Look2-V3",
       "src": "assets/looks/G2-06/Look2-V3.glb",
-      "iosSrc": "assets/looks/G2-06/Look2-V3.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G2-06/Look2-V3.usdz?cb=1697835600",
+      "designers": ["Do Ha Phuong","Kim SangYoo","Lieu Thuy Dan","Nguyen Le Chi Bao","Nguyen Nhat Dong","Nguyen Tuong Vy"]
     },
+
     {
       "id": "G3-01",
-      "collectionTitle": "Dream within a Dream",
-      "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
-      "lookName": "Look-1",
-      "designers": [
-        "Dao Tra My",
-        "Doan Ngoc Ngan",
-        "Hang To Hien",
-        "Hoang Mai Linh",
-        "Nguyen Luu Kien Quoc",
-        "Nguyen Ngoc Bao Khanh"
-      ],
       "group": "G3",
+      "collectionTitle": "Dream within a Dream",
+      "lookName": "Look-1",
       "src": "assets/looks/G3-01/Look-1.glb",
-      "iosSrc": "assets/looks/G3-01/Look-1.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G3-01/Look-1.usdz?cb=1697835600",
+      "designers": ["Dao Tra My","Doan Ngoc Ngan","Hang To Hien","Hoang Mai Linh","Nguyen Luu Kien Quoc","Nguyen Ngoc Bao Khanh"]
     },
     {
       "id": "G3-02",
-      "collectionTitle": "Dream within a Dream",
-      "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
-      "lookName": "Look-2",
-      "designers": [
-        "Dao Tra My",
-        "Doan Ngoc Ngan",
-        "Hang To Hien",
-        "Hoang Mai Linh",
-        "Nguyen Luu Kien Quoc",
-        "Nguyen Ngoc Bao Khanh"
-      ],
       "group": "G3",
+      "collectionTitle": "Dream within a Dream",
+      "lookName": "Look-2",
       "src": "assets/looks/G3-02/Look-2.glb",
-      "iosSrc": "assets/looks/G3-02/Look-2.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G3-02/Look-2.usdz?cb=1697835600",
+      "designers": ["Dao Tra My","Doan Ngoc Ngan","Hang To Hien","Hoang Mai Linh","Nguyen Luu Kien Quoc","Nguyen Ngoc Bao Khanh"]
     },
     {
       "id": "G3-03",
-      "collectionTitle": "Dream within a Dream",
-      "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
-      "lookName": "Look-3",
-      "designers": [
-        "Dao Tra My",
-        "Doan Ngoc Ngan",
-        "Hang To Hien",
-        "Hoang Mai Linh",
-        "Nguyen Luu Kien Quoc",
-        "Nguyen Ngoc Bao Khanh"
-      ],
       "group": "G3",
+      "collectionTitle": "Dream within a Dream",
+      "lookName": "Look-3",
       "src": "assets/looks/G3-03/Look-3.glb",
-      "iosSrc": "assets/looks/G3-03/Look-3.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G3-03/Look-3.usdz?cb=1697835600",
+      "designers": ["Dao Tra My","Doan Ngoc Ngan","Hang To Hien","Hoang Mai Linh","Nguyen Luu Kien Quoc","Nguyen Ngoc Bao Khanh"]
     },
     {
       "id": "G3-04",
-      "collectionTitle": "Dream within a Dream",
-      "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
-      "lookName": "Look-4",
-      "designers": [
-        "Dao Tra My",
-        "Doan Ngoc Ngan",
-        "Hang To Hien",
-        "Hoang Mai Linh",
-        "Nguyen Luu Kien Quoc",
-        "Nguyen Ngoc Bao Khanh"
-      ],
       "group": "G3",
+      "collectionTitle": "Dream within a Dream",
+      "lookName": "Look-4",
       "src": "assets/looks/G3-04/Look-4.glb",
-      "iosSrc": "assets/looks/G3-04/Look-4.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G3-04/Look-4.usdz?cb=1697835600",
+      "designers": ["Dao Tra My","Doan Ngoc Ngan","Hang To Hien","Hoang Mai Linh","Nguyen Luu Kien Quoc","Nguyen Ngoc Bao Khanh"]
     },
     {
       "id": "G3-05",
-      "collectionTitle": "Dream within a Dream",
-      "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
-      "lookName": "Look-5",
-      "designers": [
-        "Dao Tra My",
-        "Doan Ngoc Ngan",
-        "Hang To Hien",
-        "Hoang Mai Linh",
-        "Nguyen Luu Kien Quoc",
-        "Nguyen Ngoc Bao Khanh"
-      ],
       "group": "G3",
+      "collectionTitle": "Dream within a Dream",
+      "lookName": "Look-5",
       "src": "assets/looks/G3-05/Look-5.glb",
-      "iosSrc": "assets/looks/G3-05/Look-5.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G3-05/Look-5.usdz?cb=1697835600",
+      "designers": ["Dao Tra My","Doan Ngoc Ngan","Hang To Hien","Hoang Mai Linh","Nguyen Luu Kien Quoc","Nguyen Ngoc Bao Khanh"]
     },
     {
       "id": "G3-06",
-      "collectionTitle": "Dream within a Dream",
-      "statement": "The collection investigates the condition of human relationships in\ncontemporary life. We envision the modern-day individuals seeking to\ndisconnect from reality through dream, where the act of sleeping\nbecomes a metaphor for how we retreat into the inner world. We want to\ncapture the haunting yet comforting feeling of loneliness inspired by the\nmovie “The Virgin Suicides”, where everyone is visible, yet no one is truly\nseen.\nThrough this film, we want to explore the transparency of girlhood and\nhow it changes (or remains unchanged) in the contemporary world. The\nsensation of being suspended between reality and abstraction, where\nyour emotions are exposed yet remain untouchable. Silence as a way of\nprotest (or emotional distance). The fragility beneath an appearance of\ntranquility.",
-      "lookName": "Look-6",
-      "designers": [
-        "Dao Tra My",
-        "Doan Ngoc Ngan",
-        "Hang To Hien",
-        "Hoang Mai Linh",
-        "Nguyen Luu Kien Quoc",
-        "Nguyen Ngoc Bao Khanh"
-      ],
       "group": "G3",
+      "collectionTitle": "Dream within a Dream",
+      "lookName": "Look-6",
       "src": "assets/looks/G3-06/Look-6.glb",
-      "iosSrc": "assets/looks/G3-06/Look-6.usdz"
+      "iosSrc": "https://raw.githubusercontent.com/matthiaswaldhart/ar-viewer-test/main/assets/looks/G3-06/Look-6.usdz?cb=1697835600",
+      "designers": ["Dao Tra My","Doan Ngoc Ngan","Hang To Hien","Hoang Mai Linh","Nguyen Luu Kien Quoc","Nguyen Ngoc Bao Khanh"]
     }
   ]
 }
